@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color"
+        android:gravity="center"
+        android:padding="@dimen/dimen_16"
+        android:text="CRYPTO HUB"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dehaze_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/title_text_view"
+        app:layout_constraintStart_toStartOf="@id/guideline_start_vertical"
+        app:layout_constraintTop_toTopOf="@id/title_text_view" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_settings_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/title_text_view"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+        app:layout_constraintTop_toTopOf="@id/title_text_view" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/crypto_labels_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_start_vertical"
+        app:layout_constraintTop_toBottomOf="@id/title_text_view" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/bg_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/crypto_labels_recycler_view">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16">
+
+            <TextView
+                android:id="@+id/crypto_title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_color"
+                android:text="ETHEREUM"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_24"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/one_min_text_view"
+                style="@style/style_time_period"
+                android:text="1M"
+                app:layout_constraintBottom_toBottomOf="@id/crypto_title_text_view"
+                app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
+                app:layout_constraintTop_toTopOf="@id/crypto_title_text_view" />
+
+            <TextView
+                android:id="@+id/one_day_text_view"
+                style="@style/style_time_period"
+                android:background="@drawable/selected_item_background"
+                android:text="1D"
+                app:layout_constraintBottom_toBottomOf="@id/crypto_title_text_view"
+                app:layout_constraintEnd_toStartOf="@id/one_min_text_view"
+                app:layout_constraintTop_toTopOf="@id/crypto_title_text_view" />
+
+            <TextView
+                android:id="@+id/one_hour_text_view"
+                style="@style/style_time_period"
+                android:text="1H"
+                app:layout_constraintBottom_toBottomOf="@id/crypto_title_text_view"
+                app:layout_constraintEnd_toStartOf="@id/one_day_text_view"
+                app:layout_constraintTop_toTopOf="@id/crypto_title_text_view" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/inner_guideline_start_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_16" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/inner_guideline_end_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_16" />
+
+            <ImageView
+                android:id="@+id/graph_1_image_view"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:background="@android:color/holo_green_light"
+                app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/crypto_title_text_view" />
+
+            <ImageView
+                android:id="@+id/graph_2_image_view"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:background="@android:color/holo_blue_light"
+                app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/graph_1_image_view" />
+
+            <TextView
+                android:id="@+id/crypto_price_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text="$342.25"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_30"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/graph_2_image_view" />
+
+            <TextView
+                android:id="@+id/crypto_price_change_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_32"
+                android:layout_marginStart="@dimen/dimen_32"
+                android:drawableLeft="@drawable/ic_keyboard_arrow_up_white_18dp"
+                android:drawableStart="@drawable/ic_keyboard_arrow_up_white_18dp"
+                android:gravity="center"
+                android:text="-21.01 (-0.76%)"
+                android:textColor="@color/selected_item_color"
+                android:textSize="@dimen/textsize_18"
+                app:layout_constraintBottom_toBottomOf="@id/crypto_price_text_view"
+                app:layout_constraintStart_toEndOf="@id/crypto_price_text_view"
+                app:layout_constraintTop_toTopOf="@id/crypto_price_text_view" />
+
+            <TextView
+                android:id="@+id/crypto_last_trade_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:text="Last Trade: B 0.025 ($68.18) on Kraken"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/crypto_price_text_view" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/crypto_details_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:orientation="vertical"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/crypto_last_trade_text_view" />
+
+            <TextView
+                android:id="@+id/news_label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text="NEWS"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_24"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/crypto_details_recycler_view" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/crypto_news_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:background="@android:color/holo_purple"
+                android:orientation="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
+                app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
+                app:layout_constraintTop_toBottomOf="@id/news_label_text_view" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_start_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimen_16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_end_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dimen_16" />
+
+</android.support.constraint.ConstraintLayout>

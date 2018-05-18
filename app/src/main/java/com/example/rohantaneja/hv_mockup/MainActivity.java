@@ -10,7 +10,9 @@ import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
 import com.example.rohantaneja.hv_mockup.adapter.CryptoDetailsAdapter;
+import com.example.rohantaneja.hv_mockup.adapter.CryptoLabelsAdapter;
 import com.example.rohantaneja.hv_mockup.model.CryptoDetails;
+import com.example.rohantaneja.hv_mockup.model.CryptoLabel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,15 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
 
         initCryptoDetailsRecyclerView();
+        initCryptoNamesRecyclerView();
         initCryptoLastTradeText();
+    }
+
+    private void initCryptoNamesRecyclerView() {
+        RecyclerView cryptoNamesRecyclerView = findViewById(R.id.crypto_labels_recycler_view);
+        CryptoLabelsAdapter adapter = new CryptoLabelsAdapter(this);
+        cryptoNamesRecyclerView.setAdapter(adapter);
+        adapter.updateList(getCryptoNames());
     }
 
     private void initCryptoLastTradeText() {
@@ -55,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
         list.add(new CryptoDetails("Market Cap", "44.9B", "Hight 24Hr", " $4,804.33"));
         list.add(new CryptoDetails("24 Hr Volume", "85,033", "Low 24Hr", "$3,671.38"));
         list.add(new CryptoDetails("Mined Coins", "16,484,250", "Open 24Hr", "$3258.56"));
+
+        return list;
+    }
+
+    private List<CryptoLabel> getCryptoNames() {
+        ArrayList<CryptoLabel> list = new ArrayList<>();
+
+        list.add(new CryptoLabel("ETH", true));
+        list.add(new CryptoLabel("BTC", false));
+        list.add(new CryptoLabel("LTC", false));
+        list.add(new CryptoLabel("BCH", false));
 
         return list;
     }

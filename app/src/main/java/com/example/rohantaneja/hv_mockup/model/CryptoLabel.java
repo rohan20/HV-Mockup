@@ -1,11 +1,11 @@
 package com.example.rohantaneja.hv_mockup.model;
 
-public class CryptoName {
+public class CryptoLabel {
 
     private String name;
     private boolean isSelected;
 
-    public CryptoName(String name, boolean isSelected) {
+    public CryptoLabel(String name, boolean isSelected) {
         this.name = name;
         this.isSelected = isSelected;
     }

@@ -163,8 +163,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_4"
-                android:text="Last Trade: B 0.025 ($68.18) on Kraken"
-                android:textColor="@android:color/white"
+                android:text="@string/last_trade_data"
+                android:textColor="@color/selected_item_color"
                 app:layout_constraintEnd_toStartOf="@id/inner_guideline_end_vertical"
                 app:layout_constraintStart_toStartOf="@id/inner_guideline_start_vertical"
                 app:layout_constraintTop_toBottomOf="@id/crypto_price_text_view" />

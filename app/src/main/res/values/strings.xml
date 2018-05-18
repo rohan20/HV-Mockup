@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HV-Mockup</string>
+    <string name="last_trade_data">Last Trade: B 0.025 ($68.18) on Kraken</string>
 </resources>

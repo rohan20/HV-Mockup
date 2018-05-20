@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/textsize_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Can Bitcoin Be Traded Like Gold?" />
+
+    <TextView
+        android:id="@+id/source_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/textsize_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text_view"
+        tools:text="www.cnbc.com" />
+
+    <View
+        android:id="@+id/separator_view"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/source_text_view"
+        app:layout_constraintStart_toEndOf="@id/source_text_view"
+        app:layout_constraintTop_toTopOf="@id/source_text_view" />
+
+    <TextView
+        android:id="@+id/timestamp_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/textsize_12"
+        app:layout_constraintBottom_toBottomOf="@id/source_text_view"
+        app:layout_constraintStart_toEndOf="@id/separator_view"
+        app:layout_constraintTop_toTopOf="@id/source_text_view"
+        tools:text="22 minutes ago" />
+
+</android.support.constraint.ConstraintLayout>

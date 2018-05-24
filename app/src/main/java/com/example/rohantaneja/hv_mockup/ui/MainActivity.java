@@ -14,6 +14,7 @@ import com.example.rohantaneja.hv_mockup.adapter.CryptoDetailsAdapter;
 import com.example.rohantaneja.hv_mockup.adapter.CryptoLabelsAdapter;
 import com.example.rohantaneja.hv_mockup.model.CryptoDetails;
 import com.example.rohantaneja.hv_mockup.model.CryptoLabel;
+import com.example.rohantaneja.hv_mockup.model.CryptoNews;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,17 @@ public class MainActivity extends AppCompatActivity {
         list.add(new CryptoLabel("BTC", false));
         list.add(new CryptoLabel("LTC", false));
         list.add(new CryptoLabel("BCH", false));
+
+        return list;
+    }
+
+    private List<CryptoNews> getCryptoNews() {
+        ArrayList<CryptoNews> list = new ArrayList<>();
+
+        list.add(new CryptoNews("Can Bitcoin Be Traded Like Gold?", "cointelegraph.com", "22 minutes ago"));
+        list.add(new CryptoNews("Bitcoin may just be a 'dangerous pricing game' says NYU's valuation expert", "www.cnbc.com", "54 minutes ago"));
+        list.add(new CryptoNews("Can Bitcoin Be Traded Like Gold?", "cointelegraph.com", "1 hour 2 minutes ago"));
+        list.add(new CryptoNews("Bitcoin may just be a 'dangerous pricing game' says NYU's valuation expert", "www.cnbc.com", "1 hour 34 minutes ago"));
 
         return list;
     }

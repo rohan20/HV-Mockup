@@ -1,4 +1,4 @@
-package com.example.rohantaneja.hv_mockup;
+package com.example.rohantaneja.hv_mockup.ui;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
+import com.example.rohantaneja.hv_mockup.R;
 import com.example.rohantaneja.hv_mockup.adapter.CryptoDetailsAdapter;
 import com.example.rohantaneja.hv_mockup.adapter.CryptoLabelsAdapter;
 import com.example.rohantaneja.hv_mockup.model.CryptoDetails;

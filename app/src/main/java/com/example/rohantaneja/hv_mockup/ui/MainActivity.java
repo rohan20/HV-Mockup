@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.rohantaneja.hv_mockup.R;
 import com.example.rohantaneja.hv_mockup.adapter.CryptoDetailsAdapter;
 import com.example.rohantaneja.hv_mockup.adapter.CryptoLabelsAdapter;
+import com.example.rohantaneja.hv_mockup.adapter.CryptoNewsAdapter;
 import com.example.rohantaneja.hv_mockup.model.CryptoDetails;
 import com.example.rohantaneja.hv_mockup.model.CryptoLabel;
 import com.example.rohantaneja.hv_mockup.model.CryptoNews;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         initCryptoDetailsRecyclerView();
         initCryptoNamesRecyclerView();
+        initCryptoNewsRecyclerView();
         initCryptoLastTradeText();
     }
 
@@ -45,6 +47,20 @@ public class MainActivity extends AppCompatActivity {
         adapter.updateList(getCryptoNames());
     }
 
+    private void initCryptoDetailsRecyclerView() {
+        RecyclerView cryptoDetailsRecyclerView = findViewById(R.id.crypto_details_recycler_view);
+        CryptoDetailsAdapter adapter = new CryptoDetailsAdapter(this);
+        cryptoDetailsRecyclerView.setAdapter(adapter);
+        adapter.updateList(getCryptoDetails());
+    }
+
+    private void initCryptoNewsRecyclerView() {
+        RecyclerView cryptoNewsRecyclerView = findViewById(R.id.crypto_news_recycler_view);
+        CryptoNewsAdapter adapter = new CryptoNewsAdapter(this);
+        cryptoNewsRecyclerView.setAdapter(adapter);
+        adapter.updateList(getCryptoNews());
+    }
+
     private void initCryptoLastTradeText() {
         TextView lastTradeTextView = findViewById(R.id.crypto_last_trade_text_view);
         SpannableString allText = new SpannableString(getString(R.string.last_trade_data));
@@ -52,13 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
         allText.setSpan(new ForegroundColorSpan(Color.WHITE), blueString.length(), allText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         lastTradeTextView.setText(allText);
-    }
-
-    private void initCryptoDetailsRecyclerView() {
-        RecyclerView cryptoDetailsRecyclerView = findViewById(R.id.crypto_details_recycler_view);
-        CryptoDetailsAdapter adapter = new CryptoDetailsAdapter(this);
-        cryptoDetailsRecyclerView.setAdapter(adapter);
-        adapter.updateList(getCryptoDetails());
     }
 
     private List<CryptoDetails> getCryptoDetails() {
